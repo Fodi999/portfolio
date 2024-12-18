@@ -1,0 +1,285 @@
+/* Чёрный фон с тёмно-серым цветом */
+/* Улучшенный фон */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', Arial, sans-serif; /* Современный шрифт */
+  background: linear-gradient(135deg, #1e1e1e, #2a2a2a); /* Тёмно-серый градиент */
+  color: #d8d8e2; /* Светло-серый текст */
+
+}
+
+/* Заголовок h1 - жёлтый */
+h1 {
+  font-size: 4rem;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #ffeb3b; /* Яркий жёлтый цвет */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Лёгкая тень */
+}
+
+/* Заголовок h2 - сиреневый акцент */
+h2 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  color: #ff0000; /* Красный */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Лёгкая тень */
+}
+
+/* Основной текст p - светло-серый */
+p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #d8d8e2; /* Светло-серый текст */
+  max-width: 800px;
+  margin: 0 auto 20px;
+  text-align: center;
+}
+
+.footer-buttons {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 20px; /* Расстояние между кнопками */
+  z-index: 10;
+}
+
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff; /* Белый текст */
+  background: rgba(128, 128, 128, 0.7); /* Полупрозрачный серый */
+  border: 2px solid rgba(255, 255, 255, 0.5); /* Белая граница */
+  border-radius: 25px;
+  text-decoration: none;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Лёгкая тень */
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.button:hover {
+  background: rgba(192, 192, 192, 0.9); /* Менее прозрачный фон */
+  transform: translateY(-3px) scale(1.1); /* Лёгкое увеличение */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Глубокая тень */
+}
+
+/* Стили для контейнеров текста */
+header, main {
+  position: relative;
+  z-index: 1; /* Контент отображается поверх шариков */
+  text-align: center;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+.profile-image {
+  display: block;
+  margin: 20px auto;
+  width: 150px; /* Задайте ширину изображения */
+  height: auto; /* Сохраните пропорции */
+  border-radius: 50%; /* Сделать изображение кругом */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Тень для стиля */
+}
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #f3e7e9, #e3eeff); /* Градиентный фон */
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Лёгкая тень */
+  max-width: 600px;
+  margin: 50px auto;
+}
+
+.contact-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #3c3c3c;
+  margin-bottom: 20px;
+}
+
+.contact-description {
+  font-size: 1.2rem;
+  color: #555555;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.contact-links {
+  display: flex;
+  gap: 20px;
+}
+
+.contact-button {
+  display: inline-flex; /* Flex для выравнивания текста и иконки */
+  align-items: center;
+  gap: 10px; /* Отступ между иконкой и текстом */
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+  background: linear-gradient(45deg, #ff5722, #ff9800); /* Градиент кнопки */
+  border: none;
+  border-radius: 30px;
+  text-decoration: none;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Лёгкая тень */
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.contact-button:hover {
+  background: linear-gradient(45deg, #ff9800, #ff5722); /* Обратный градиент */
+  transform: scale(1.1); /* Лёгкое увеличение */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Более глубокая тень */
+}
+
+.contact-icon {
+  font-size: 1.5rem; /* Размер иконки */
+}
+/* Общий контейнер для страницы рецептов */
+.recipes-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+  background: #2c2c2c; /* Тёмно-серый фон */
+  min-height: 100vh;
+  color: #e0e0e0; /* Светлый текст */
+}
+
+/* Заголовок */
+.recipes-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.recipes-description {
+  font-size: 1.2rem;
+  color: #b3b3b3; /* Светло-серый текст */
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* Лента рецептов */
+.recipe-feed {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  max-width: 800px; /* Ширина ленты */
+  overflow-y: auto;
+  max-height: 70vh;
+  padding-right: 10px;
+}
+
+/* Карточка рецепта */
+.recipe-card {
+  display: flex;
+  flex-direction: row; /* Изображение слева, текст справа */
+  background: #3a3a3a; /* Цвет фона карточки */
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.recipe-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Изображение рецепта */
+.recipe-image {
+  width: 40%; /* Изображение занимает 40% ширины карточки */
+  height: auto;
+  object-fit: cover; /* Обрезка изображения по размеру */
+  transition: transform 0.3s ease-in-out;
+}
+
+.recipe-card:hover .recipe-image {
+  transform: scale(1.05); /* Увеличение изображения при наведении */
+}
+
+/* Контент рецепта */
+.recipe-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Центровка текста */
+  width: 60%; /* Текст занимает оставшиеся 60% ширины */
+}
+
+.recipe-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.recipe-description {
+  font-size: 1rem;
+  color: #cccccc;
+  line-height: 1.6;
+}
+/* Адаптация для мобильных устройств */
+@media (max-width: 768px) {
+  .recipe-card {
+    flex-direction: column; /* Переключаем карточки в вертикальный макет */
+    text-align: center; /* Центрируем текст */
+  }
+
+  .recipe-image {
+    width: 100%; /* Изображение занимает всю ширину */
+    height: auto; /* Сохраняем пропорции */
+  }
+
+  .recipe-content {
+    width: 100%; /* Текст занимает всю ширину */
+    padding: 15px; /* Уменьшаем отступы */
+  }
+
+  .recipe-title {
+    font-size: 1.3rem; /* Уменьшаем размер шрифта */
+  }
+
+  .recipe-description {
+    font-size: 0.9rem; /* Уменьшаем размер текста */
+  }
+}
+
+/* Адаптация для очень маленьких экранов */
+@media (max-width: 480px) {
+  .recipes-title {
+    font-size: 2rem; /* Уменьшаем размер заголовка */
+  }
+
+  .recipes-description {
+    font-size: 1rem; /* Уменьшаем описание */
+  }
+
+  .recipe-content {
+    padding: 10px; /* Ещё меньше отступы */
+  }
+
+  .recipe-title {
+    font-size: 1.2rem;
+  }
+
+  .recipe-description {
+    font-size: 0.8rem;
+  }
+}
