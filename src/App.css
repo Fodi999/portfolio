@@ -1,42 +1,380 @@
-#root {
-  max-width: 1280px;
+/* Общие стили */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #f5f5f5; /* Светло-серый текст */
+  background-color: #333; /* Темный фон */
+}
+
+.container {
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #555; /* Тонкая линия для разделения */
+  padding: -20px; /* Основные отступы */
 }
 
 .logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff; /* Белый логотип */
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+.navigation ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.navigation li {
+  cursor: pointer;
+  color: #f5f5f5;
+}
+
+.navigation li:hover {
+  color: #ccc; /* Подсветка при наведении */
+}
+
+.main-content {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.featured-post {
+  flex: 2;
+}
+
+.featured-image {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Тень */
+}
+
+.post-title {
+  margin-top: 20px;
+  font-size: 32px; /* Увеличиваем размер заголовка */
+  font-weight: bold;
+  text-transform: uppercase; /* Делаем текст заглавными буквами */
+  color: #fff; /* Белый текст, кроме выделения */
+  text-align: center; /* Выравниваем заголовок по центру */
+}
+
+.post-description {
+  font-size: 18px; /* Размер текста описания */
+  color: #ccc; /* Светло-серый цвет для текста */
+  margin-top: 10px;
+  text-align: center; /* Выравнивание по центру */
+  line-height: 1.5; /* Увеличиваем межстрочный интервал */
+}
+
+.news-list {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.news-item {
+  border-bottom: 1px solid #555; /* Разделитель между уроками */
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.news-title {
+  font-weight: bold;
+  font-size: 18px; /* Увеличиваем размер заголовка */
+  color: #fff;
+}
+
+.news-description {
+  color: #ccc; /* Светло-серый текст */
+  margin-top: 5px;
+  line-height: 1.5; /* Увеличиваем межстрочный интервал */
+}
+
+
+.instagram-feed {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.instagram-item img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Тень */
+}
+
+.footer {
+  margin-top: 20px;
+  text-align: center;
+  border-top: 1px solid #555;
+  padding: 10px;
+  color: #ccc;
+}
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-image {
+  width: 80px; /* Размер логотипа */
+  height: auto;
+}
+/* Кнопка "бургер" */
+.burger-menu {
+  display: none; /* Скрываем кнопку на больших экранах */
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+/* Навигация для мобильных */
+.navigation {
+  display: flex;
+  gap: 20px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.navigation.open {
+  display: block; /* Показываем меню на мобильных */
+  position: absolute;
+  top: 60px;
+  left: 0;
+  background-color: #333; /* Цвет фона меню */
+  width: 100%;
+  padding: 10px 20px;
+  z-index: 100;
+}
+
+.navigation ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+}
+
+.navigation li {
+  margin: 10px 0;
+  color: #f5f5f5;
+}
+
+@media (max-width: 768px) {
+  .burger-menu {
+    display: block; /* Показываем кнопку на мобильных */
   }
-  to {
-    transform: rotate(360deg);
+
+  .navigation {
+    display: none; /* Скрываем меню по умолчанию */
+    flex-direction: column;
+  }
+
+  .navigation.open {
+    display: flex; /* Показываем меню при открытии */
+  }
+}
+.language-selector {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.language-selector button {
+  background-color: #555;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+.language-selector {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-left: auto; /* Отодвигаем кнопки вправо */
+}
+
+.language-selector button {
+  background-color: #555;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+.language-selector button:hover {
+  background-color: #777;
+}
+
+.language-selector button:active {
+  background-color: #333;
+}
+
+/* Адаптация для мобильных устройств */
+@media (max-width: 768px) {
+  .navigation.open .language-selector {
+    margin-top: 20px; /* Отступ сверху для кнопок перевода */
+  }
+
+  .language-selector {
+    justify-content: center; /* Центрируем кнопки в бургер-меню */
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+
+/* ====== Мобильная адаптация ====== */
+@media (max-width: 768px) {
+  .header {
+    padding: -10px; /* Уменьшаем отступы */
+    flex-direction: row; /* Логотип и бургер в одну строку */
   }
+  .logo {
+    font-size: 20px; /* Уменьшаем размер текста логотипа */
+  }
+
+  .burger-menu {
+    font-size: 40px; /* Уменьшаем размер кнопки "бургер" */
+  }
+  .navigation ul {
+    padding: 0;
+    margin: 0;
+  }
+
+  .main-content {
+    flex-direction: column; /* Блоки в одну колонку */
+  }
+
+  .featured-post {
+    flex: unset; /* Убираем flex-grow */
+  }
+
+  .news-list {
+    flex: unset; /* Убираем flex-grow */
+  }
+
+  .instagram-feed {
+    flex: unset; /* Убираем flex-grow */
+    flex-direction: row;
+    overflow-x: auto; /* Горизонтальная прокрутка */
+    gap: 10px;
+  }
+
+  .instagram-item img {
+    width: 80px; /* Уменьшаем размер фото */
+    height: 80px;
+  }
+
+  .post-title {
+    font-size: 18px; /* Уменьшаем размер текста */
+  }
+
+  .footer {
+    font-size: 14px; /* Уменьшаем размер текста в футере */
+  }
+  /* Кнопка закрытия модального окна */
+.close-modal {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 1001; /* Поверх остальных элементов */
 }
 
-.card {
-  padding: 2em;
+.close-modal:hover {
+  color: #ccc; /* Подсветка при наведении */
 }
 
-.read-the-docs {
-  color: #888;
+/* Модальное окно */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Полупрозрачный фон */
+  display: flex;
+  justify-content: flex-start; /* Выравниваем окно ближе к началу */
+  align-items: flex-start; /* Поднимаем окно вверх */
+  padding: 20px;
+  z-index: 1000;
 }
+
+/* Навигация внутри модального окна */
+.navigation-modal {
+  background: #333; /* Цвет основного меню */
+  padding: 20px;
+  border-radius: 8px;
+  width: 80%; /* Ширина модального меню */
+  max-width: 300px; /* Ограничение по ширине */
+  position: relative; /* Для позиционирования кнопки закрытия */
+}
+
+.navigation-modal ul {
+  list-style: none;
+  padding: 0;
+  margin: 40px 0 0; /* Оставляем место для кнопки закрытия */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.navigation-modal li {
+  color: white;
+  cursor: pointer;
+  font-size: 18px;
+  text-align: left;
+}
+
+/* Компактные кнопки перевода */
+.language-selector-compact {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.language-selector-compact button {
+  background-color: #555;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 8px; /* Компактные размеры кнопок */
+  font-size: 12px; /* Уменьшенный шрифт */
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.language-selector-compact button:hover {
+  background-color: #777;
+}
+
+.language-selector-compact button:active {
+  background-color: #333;
+}
+
+}
+
+
