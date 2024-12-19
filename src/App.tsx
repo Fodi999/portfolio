@@ -58,19 +58,19 @@ const App: React.FC = () => {
 
   return (
     <div className="container">
-      <header className="header">
+<header className="header">
   <div className="logo">
     <img src="/IMG_7211.PNG" alt="Chef Logo" className="logo-image" />
   </div>
-  {/* Кнопка "бургер" */}
-  <button className="burger-menu" onClick={toggleMenu}>
+  <button className="burger-menu" onClick={() => { 
+    toggleMenu(); 
+    console.log("Burger menu clicked, menuOpen:", menuOpen);
+  }}>
     ☰
   </button>
-  {/* Навигация */}
   {menuOpen && (
     <div className="modal-overlay">
       <nav className="navigation-modal">
-        {/* Кнопка закрытия */}
         <button className="close-modal" onClick={toggleMenu}>
           ←
         </button>
@@ -79,7 +79,6 @@ const App: React.FC = () => {
             <li key={index}>{item}</li>
           ))}
         </ul>
-        {/* Компактные кнопки перевода */}
         <div className="language-selector-compact">
           <button onClick={() => setLanguage('en')}>EN</button>
           <button onClick={() => setLanguage('ru')}>RU</button>
@@ -89,6 +88,7 @@ const App: React.FC = () => {
     </div>
   )}
 </header>
+
 
 
       <main className="main-content">
